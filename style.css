@@ -188,7 +188,7 @@ footer{
 }
 
 @media only screen and (max-width:450px){
-    header nav{
+    .links{
         display: none;
     }
     
@@ -198,7 +198,6 @@ footer{
         width: 30px;
         height: 30px;
         cursor: pointer;
-        margin-right: 20px;
         /* preenchido com a imagem do menu hambúrguer */
         background: url(img/menu.png);
         background-size: 30px;
@@ -211,7 +210,6 @@ footer{
         position: fixed;
         filter: invert(0);
         right: 20px;
-        margin-right: 0;
         /* preenchido com a imagem de 'fechar' */
         background: url(img/close.png);
         background-size: 25px;
@@ -220,7 +218,7 @@ footer{
     }
 
     /* formar a lista do menu hamburguer */
-    header nav ul.links.active {
+    .links.active {
         position: fixed;
         top: 0;
         right: 0;
@@ -229,19 +227,12 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #f2f2f2;
-        z-index: 12;
+        background-color: var(--secundaria);
+        z-index: 10;
     }
-    header nav ul li a {
+    nav ul li a {
         font-size: 1.5em;
         margin: 5px 0;
-    }
-    header{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    header h1{
-        margin-left: 50px;
     }
     footer p{
         font-size: 1.2rem;
