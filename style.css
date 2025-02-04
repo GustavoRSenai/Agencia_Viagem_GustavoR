@@ -7,10 +7,13 @@
     --textos:#ffffff;
     --textossecundarios: lightslategrey;
     --titulos:#000000;
+    --botãohover:#981abe;
 }
 
 
 *{
+    text-decoration: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     font-family: "Jaini Purva", serif;
@@ -38,17 +41,33 @@ header{
 }
 header h1{
     color: var(--textos);
-    font-size: 2.5rem;
+    font-size: 2rem;
+    text-shadow: 2px 2px 2px black;
 }
 nav{
     width: 50%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
 }
-nav a{
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav ul li{
+    margin-left: 30px;
+}
+nav ul li a{
     color: var(--textos);
     text-decoration: none;
     font-size: 1.5rem;
+    text-shadow: 2px 2px 2px black;
+}
+nav a:hover{
+    transform: scale(1.05);
+    transition: 0.4s;
+    color: lightgray;
 }
 .fundo{
     max-width: 100%;
@@ -83,7 +102,7 @@ aside h2, h4{
 }
 aside p{
     font-size: 1rem;
-    margin-left: 25px;
+    margin: 0 5px 0 25px;
 }
 .promocao{
     color: var(--textossecundarios);
@@ -119,6 +138,11 @@ form button{
     padding: 10px;
     margin: 0 10px;
 }
+form button:hover{
+    background-color: var(--botãohover);
+    transform: scale(1.02);
+    transition: 0.4s;
+}
 .arearolagem{
     max-width: 100%;
     max-height: 560px;
@@ -130,6 +154,7 @@ form button{
     overflow-x: auto;
 }
 .rolagemimg{
+    position: relative;
     margin: 20px;
     height: 180px!important;
     width: 280px!important;
@@ -150,11 +175,73 @@ footer{
     justify-content: center;
     font-size: 2rem;
 }
+.imgtxt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.arearolagem p{
+    position: absolute;
+    /* visibility: hidden; */
+
+}
 
 @media only screen and (max-width:450px){
-    nav a{
-        visibility: hidden;
-        width: 0;
+    header nav{
+        display: none;
+    }
+    
+    .toggle{
+        position: relative;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        margin-right: 20px;
+        /* preenchido com a imagem do menu hambúrguer */
+        background: url(img/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }    
+    .toggle.active{
+        position: fixed;
+        filter: invert(0);
+        right: 20px;
+        margin-right: 0;
+        /* preenchido com a imagem de 'fechar' */
+        background: url(img/close.png);
+        background-size: 25px;
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+
+    /* formar a lista do menu hamburguer */
+    header nav ul.links.active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        z-index: 12;
+    }
+    header nav ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header h1{
+        margin-left: 50px;
     }
     footer p{
         font-size: 1.2rem;
@@ -168,4 +255,39 @@ footer{
         justify-content: center;
     }
 
+}
+@media only screen and (min-width:450px) and (max-width:768px){
+    main{
+        margin-top: 0;
+    }
+    .left, .right{
+        margin: 10px;
+        max-height: 200px!important;
+        padding-right: 10px;
+        flex-direction: row;
+    }
+    aside h2, h4{
+        margin-left: 10px;
+        font-size: 1rem;
+        writing-mode: sideways-lr;
+        align-self: center;
+    }
+    aside p{
+        margin: 0;
+        font-size: 0.7rem;
+    }
+    img.asideimg{
+        max-width: 210px!important;
+        max-height: 150px!important;
+    }
+    .left .asideimg{
+        margin: 10px;
+    }
+    .right .asideimg{
+        max-width: 200px!important;
+        max-height: 150px!important;
+    }
+    footer{
+        font-size: 1.5rem;
+    }
 }
