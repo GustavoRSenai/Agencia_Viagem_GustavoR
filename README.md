@@ -24,7 +24,7 @@ JavaScript é uma linguagem de programação usada para criar interatividade e d
 <img style=" height:550px;" src="https://github.com/user-attachments/assets/8c87ae81-ca6e-4cfa-b849-69b8fdfdc313">
 <img style=" height:550px;" src="https://github.com/user-attachments/assets/2ea07ceb-2392-4a00-b6ae-d495d4c60148">
 
-> Este protótipo serve para termos uma base de como deve ser feito o nosso projeto para celulares e o que teremos que adaptar sobre o´para computadores.
+> Este protótipo serve para termos uma base de como deve ser feito o nosso projeto para celulares e o que teremos que adaptar sobre o para computadores.
 
 <hr>
 
